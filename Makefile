@@ -15,3 +15,7 @@ build:
 all:
 	make build
 	poetry run python -m pip install --upgrade pip
+
+jupyter:
+	poetry run python -m ipykernel install --name bastbox
+	poetry run jupyter notebook
