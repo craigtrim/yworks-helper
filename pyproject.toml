@@ -5,6 +5,7 @@ name = "yworks-helper"
 version = "0.1.0"
 
 [tool.poetry.dependencies]
+baseblock = "*"
 ipykernel = "*"
 jupyter = "^1.0.0"
 python = "3.8.5"
