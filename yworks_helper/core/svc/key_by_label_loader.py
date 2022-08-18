@@ -57,7 +57,8 @@ class KeyByLabelLoader(BaseObject):
     def _generate_edges(self,
                         d_node_map: dict,
                         source_edges: list) -> dict:
-        d_target_edges = {}
+        
+        target_edges = []
 
         for d_source in source_edges:
             edge_id = self._uuid()
@@ -71,9 +72,9 @@ class KeyByLabelLoader(BaseObject):
                       if k not in ['start', 'end']]:
                 d_target[k] = d_source[k]
 
-            d_target_edges[edge_id] = d_target
+            target_edges.append(d_target)
 
-        return d_target_edges
+        return target_edges
 
     def process(self,
                 d_nodes: dict,

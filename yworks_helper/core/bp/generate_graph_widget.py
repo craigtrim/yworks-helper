@@ -61,6 +61,10 @@ class GenerateGraphWidget(BaseObject):
 
         w = GraphWidget()
         w.nodes = d_result['nodes']
+
+        from pprint import pprint
+        pprint (d_result['edges'])
+
         w.edges = d_result['edges']
         w.directed = directed
 
