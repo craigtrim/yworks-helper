@@ -61,7 +61,7 @@ class KeyByLabelLoader(BaseObject):
         target_edges = []
 
         for d_source in source_edges:
-            edge_id = self._uuid()
+            # edge_id = self._uuid()
 
             d_target = {
                 "start": d_node_map[d_source['start']],
@@ -70,6 +70,7 @@ class KeyByLabelLoader(BaseObject):
 
             for k in [k for k in d_source.keys()
                       if k not in ['start', 'end']]:
+                
                 d_target[k] = d_source[k]
 
             target_edges.append(d_target)
