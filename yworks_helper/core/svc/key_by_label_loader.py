@@ -37,19 +37,26 @@ class KeyByLabelLoader(BaseObject):
             node_id = self._uuid()
             d_map[k] = node_id
 
+            def color():
+                if 'color' in d_nodes[k]:
+                    return d_nodes[k]['color']
+                return '17bebb'  # default
+
             def properties():
                 d = {
                     "label": k
                 }
 
-                for inner_key in d_nodes[k]:
+                inner_keys = [k for k in d_nodes[k] if k not in ['color']]
+                for inner_key in inner_keys:
                     d[inner_key] = d_nodes[k][inner_key]
 
                 return d
 
             nodes.append({
                 "id": node_id,
-                "properties": properties()
+                "properties": properties(),
+                "color": color()
             })
 
         return nodes, d_map
@@ -57,7 +64,7 @@ class KeyByLabelLoader(BaseObject):
     def _generate_edges(self,
                         d_node_map: dict,
                         source_edges: list) -> dict:
-        
+
         target_edges = []
 
         for d_source in source_edges:
@@ -70,7 +77,7 @@ class KeyByLabelLoader(BaseObject):
 
             for k in [k for k in d_source.keys()
                       if k not in ['start', 'end']]:
-                
+
                 d_target[k] = d_source[k]
 
             target_edges.append(d_target)
