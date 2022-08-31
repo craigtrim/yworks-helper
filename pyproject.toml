@@ -2,7 +2,7 @@
 authors = ["Craig Trim <craigtrim@gmail.com>"]
 description = "Helper Microservice to create yWorks Graphs in Jupyter"
 name = "yworks-helper"
-version = "0.1.4    "
+version = "0.1.4"
 
 [tool.poetry.dependencies]
 baseblock = "*"
