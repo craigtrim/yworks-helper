@@ -86,10 +86,6 @@ class KeyByLabelLoader(BaseObject):
 
         return target_edges
 
-    def color_mapping(index: int, node: Dict):
-        if 'color' in node:
-            return node['color']
-        return '#17bebb'  # default
 
     def process(self,
                 d_nodes: dict,

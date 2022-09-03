@@ -3,6 +3,8 @@
 """ Generate a yWorks Graph Widget """
 
 
+from typing import Dict
+
 from yfiles_jupyter_graphs import GraphWidget
 
 from baseblock import BaseObject
@@ -64,5 +66,12 @@ class GenerateGraphWidget(BaseObject):
 
         w.edges = d_result['edges']
         w.directed = directed
+
+        def color_mapping(index: int, node: Dict):
+            if 'color' in node:
+                return node['color']
+            return '#17bebb'  # default
+
+        w.set_node_color_mapping(color_mapping)
 
         return w
