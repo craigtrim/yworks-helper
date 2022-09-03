@@ -4,6 +4,7 @@
 
 
 from uuid import uuid1
+from typing import Dict
 
 
 from baseblock import BaseObject
@@ -13,7 +14,8 @@ class KeyByLabelLoader(BaseObject):
     """ Accept Graph Data that is keyed by Label """
 
     def __init__(self):
-        """
+        """ Change Log
+
         Created:
             18-Aug-2022
             craigtrim@gmail.com
@@ -40,7 +42,7 @@ class KeyByLabelLoader(BaseObject):
             def color():
                 if 'color' in d_nodes[k]:
                     return d_nodes[k]['color']
-                return '17bebb'  # default
+                return '#17bebb'  # default
 
             def properties():
                 d = {
@@ -83,6 +85,11 @@ class KeyByLabelLoader(BaseObject):
             target_edges.append(d_target)
 
         return target_edges
+
+    def color_mapping(index: int, node: Dict):
+        if 'color' in node:
+            return node['color']
+        return '#17bebb'  # default
 
     def process(self,
                 d_nodes: dict,

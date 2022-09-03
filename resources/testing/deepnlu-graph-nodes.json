@@ -1,0 +1,196 @@
+{
+    "nodes": {
+        "ENT_NORP": {
+            "OriginalText": "NORP",
+            "Type": "ENT",
+            "id": "ENT_NORP",
+            "label": "NORP",
+            "color": "#8b9df2"
+        },
+        "6042939320535660714": {
+            "PartOfSpeech": "PROPN",
+            "Tag": "NNP",
+            "Dependency": "amod",
+            "Shape": "xxxx",
+            "Coords": "0, 8",
+            "Stemmed": "american",
+            "OriginalText": "american ",
+            "NormalizedText": "american",
+            "Type": "TOKEN",
+            "id": "6042939320535660714",
+            "label": "american ",
+            "color": "#fdc0c7"
+        },
+        "16602643206033239142": {
+            "PartOfSpeech": "ADJ",
+            "Tag": "JJ",
+            "Dependency": "amod",
+            "Shape": "xxxx",
+            "Coords": "9, 15",
+            "Stemmed": "silent",
+            "OriginalText": "silent ",
+            "NormalizedText": "silent",
+            "Type": "TOKEN",
+            "id": "16602643206033239142",
+            "label": "silent ",
+            "color": "#fdc0c7"
+        },
+        "16417888112635110788": {
+            "PartOfSpeech": "NOUN",
+            "Tag": "NN",
+            "Dependency": "conj",
+            "Shape": "xxxx",
+            "Coords": "16, 23",
+            "Stemmed": "featur",
+            "OriginalText": "feature ",
+            "NormalizedText": "feature",
+            "Type": "TOKEN",
+            "id": "16417888112635110788",
+            "label": "feature ",
+            "color": "#fdc0c7"
+        },
+        "5665575797947403677": {
+            "PartOfSpeech": "NOUN",
+            "Tag": "NNS",
+            "Dependency": "ROOT",
+            "Shape": "xxxx",
+            "Coords": "24, 29",
+            "Stemmed": "film",
+            "OriginalText": "films",
+            "NormalizedText": "films",
+            "Type": "TOKEN",
+            "id": "5665575797947403677",
+            "label": "films",
+            "color": "#fdc0c7"
+        },
+        "SWAP_6042939320535660714": {
+            "Coords": "0, 29",
+            "Canon": "american_film",
+            "OriginalText": "american silent feature films",
+            "Confidence": 75.0,
+            "Type": "SWAP",
+            "id": "SWAP_6042939320535660714",
+            "label": "american_film",
+            "color": "#56ba5a"
+        },
+        "SWAP_16602643206033239142": {
+            "Coords": "9, 29",
+            "Canon": "silent_film",
+            "OriginalText": "silent feature films",
+            "Confidence": 75.0,
+            "Type": "SWAP",
+            "id": "SWAP_16602643206033239142",
+            "label": "silent_film",
+            "color": "#56ba5a"
+        },
+        "SWAP_16417888112635110788": {
+            "Coords": "16, 29",
+            "Canon": "feature_film",
+            "OriginalText": "feature films",
+            "Confidence": 100.0,
+            "Type": "SWAP",
+            "id": "SWAP_16417888112635110788",
+            "label": "feature_film",
+            "color": "#56ba5a"
+        },
+        "SWAP_5665575797947403677": {
+            "Coords": "24, 29",
+            "Canon": "film",
+            "OriginalText": "films",
+            "Confidence": 100.0,
+            "Type": "SWAP",
+            "id": "SWAP_5665575797947403677",
+            "label": "film",
+            "color": "#56ba5a"
+        },
+        "OWL_CATEGORIES": {
+            "Name": "categories",
+            "Type": "ONTOLOGY",
+            "id": "OWL_CATEGORIES",
+            "label": "categories",
+            "color": "#0cc6b8"
+        }
+    },
+    "edges": [
+        {
+            "start": "SWAP_6042939320535660714",
+            "end": "6042939320535660714",
+            "name": "composed-of"
+        },
+        {
+            "start": "SWAP_6042939320535660714",
+            "end": "16602643206033239142",
+            "name": "composed-of"
+        },
+        {
+            "start": "SWAP_6042939320535660714",
+            "end": "OWL_CATEGORIES",
+            "name": "has-provenance"
+        },
+        {
+            "start": "6042939320535660714",
+            "end": "5665575797947403677",
+            "name": "dependency"
+        },
+        {
+            "start": "6042939320535660714",
+            "end": "ENT_NORP",
+            "name": "is-type-of"
+        },
+        {
+            "start": "SWAP_16602643206033239142",
+            "end": "16602643206033239142",
+            "name": "composed-of"
+        },
+        {
+            "start": "SWAP_16602643206033239142",
+            "end": "16417888112635110788",
+            "name": "composed-of"
+        },
+        {
+            "start": "SWAP_16602643206033239142",
+            "end": "OWL_CATEGORIES",
+            "name": "has-provenance"
+        },
+        {
+            "start": "16602643206033239142",
+            "end": "5665575797947403677",
+            "name": "dependency"
+        },
+        {
+            "start": "SWAP_16417888112635110788",
+            "end": "16417888112635110788",
+            "name": "composed-of"
+        },
+        {
+            "start": "SWAP_16417888112635110788",
+            "end": "5665575797947403677",
+            "name": "composed-of"
+        },
+        {
+            "start": "SWAP_16417888112635110788",
+            "end": "OWL_CATEGORIES",
+            "name": "has-provenance"
+        },
+        {
+            "start": "16417888112635110788",
+            "end": "16602643206033239142",
+            "name": "dependency"
+        },
+        {
+            "start": "SWAP_5665575797947403677",
+            "end": "5665575797947403677",
+            "name": "composed-of"
+        },
+        {
+            "start": "SWAP_5665575797947403677",
+            "end": "OWL_CATEGORIES",
+            "name": "has-provenance"
+        },
+        {
+            "start": "5665575797947403677",
+            "end": "5665575797947403677",
+            "name": "dependency"
+        }
+    ]
+}
