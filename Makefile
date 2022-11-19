@@ -1,3 +1,7 @@
+# ----------------------------------------------------------------
+# helpers/yworks-helper
+# ----------------------------------------------------------------
+
 install:
 	poetry check
 	poetry lock
@@ -12,10 +16,15 @@ build:
 	make test
 	poetry build
 
-all:
-	make build
+linters:
+	poetry run pre-commit run --all-files
+	poetry run flakeheaven lint
+
+freeze:
+	poetry run pip freeze > requirements.txt
 	poetry run python -m pip install --upgrade pip
 
-jupyter:
-	poetry run python -m ipykernel install --name bastbox
-	poetry run jupyter notebook
+all:
+	make build
+	make linters
+	make freeze
